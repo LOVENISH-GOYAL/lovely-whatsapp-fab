@@ -27,7 +27,7 @@ function MyComponent() {
 ```
 ## Props:
 * phoneNumber: Your whatsapp chat phone number.
-* message: A message that will be written in yours chatbox by default when whatsapp open.  They can edit this message before send.
+* message: A message that will be written in user's chatbox by default when whatsapp open.  They can edit this message before send.
 
 ## Preview
 ![Preview Image](images/preview.jpg)
