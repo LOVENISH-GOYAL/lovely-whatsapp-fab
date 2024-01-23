@@ -1,0 +1,27 @@
+/* CSS Switch */
+:root {
+  --fab-background: #009900;
+  --fab-background-hover: #009ae1;
+}
+
+/* WhatsAppButton.css */
+.btnWhatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.btnWhatsapp button {
+  background: var(--fab-background);
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+}
+
+.btnWhatsapp button:hover {
+  background: var(--fab-background1);
+}
+
+/* Additional styling as needed */
