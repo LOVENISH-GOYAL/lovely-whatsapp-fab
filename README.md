@@ -40,7 +40,7 @@ function MyComponent() {
 This project is licensed under the MIT License - see the LICENSE.md file for details.
 
 ## Author
-Lovenish Goyal
+[Lovenish Goyal](https://github.com/LOVENISH-GOYAL)
 
 Changelog
 See the CHANGELOG file for details about changes.

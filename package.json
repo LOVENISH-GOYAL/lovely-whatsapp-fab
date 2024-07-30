@@ -1,6 +1,6 @@
 {
   "name": "lovely-whatsapp-fab",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A whatsapp chat floating button",
   "main": "./src/WhatsappFAB.js",
   "types": "types/index.d.ts",
@@ -18,6 +18,7 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.23.7",
+    "@babel/plugin-transform-runtime": "^7.23.7",
     "@babel/preset-env": "^7.23.8",
     "@babel/preset-react": "^7.23.3",
     "@testing-library/jest-dom": "^6.2.0",
@@ -33,7 +34,7 @@
   },
   "dependencies": {
     "prop-types": "^15.8.1"
-  } ,
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/LOVENISH-GOYAL/lovely-whatsapp-fab"

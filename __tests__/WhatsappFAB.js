@@ -8,12 +8,21 @@ import WhatsappFAB from '../src/WhatsappFAB';
 jest.mock('../src/icon.png', () => 'icon.png');
 
 describe('WhatsappFAB', () => {
+  let openSpy;
+
+  beforeEach(() => {
+    // Create a spy for window.open before each test
+    openSpy = jest.spyOn(window, 'open').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    // Restore the original implementation after each test
+    openSpy.mockRestore();
+  });
+
   it('opens WhatsApp with the correct URL when clicked', () => {
     const phoneNumber = '1234567890';
     const message = 'Hello, this is a test message.';
-
-    // Create a spy for window.open
-    const openSpy = jest.spyOn(window, 'open').mockImplementation(() => {});
 
     const { getByRole } = render(<WhatsappFAB phoneNumber={phoneNumber} message={message} />);
     
@@ -22,9 +31,6 @@ describe('WhatsappFAB', () => {
 
     const expectedWhatsAppURL = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
     expect(openSpy).toHaveBeenCalledWith(expectedWhatsAppURL, '_blank');
-
-    // Restore the original implementation after the test
-    openSpy.mockRestore();
   });
 
   // Add more tests as needed

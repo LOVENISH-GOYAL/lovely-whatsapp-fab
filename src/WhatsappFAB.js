@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import WhatsappIcon from './icon.png';
 import styles from './WhatsappFAB.module.css';
+import WhatsappIcon from './icon.png';
 
 function WhatsappFAB({ phoneNumber, message }) {
   const handleWhatsAppClick = () => {
@@ -14,7 +14,7 @@ function WhatsappFAB({ phoneNumber, message }) {
   return (
     <div className={styles.btnWhatsapp}>
       <button onClick={handleWhatsAppClick} className="btn">
-        <img src={WhatsappIcon} alt="WhatsApp Icon" /> {/* Use the imported image */}
+        <img src={WhatsappIcon} alt="WhatsApp Icon" width={"24px"}/> 
       </button>
     </div>
   );
