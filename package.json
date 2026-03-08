@@ -1,21 +1,73 @@
 {
   "name": "lovely-whatsapp-fab",
-  "version": "1.0.3",
+  "version": "1.0.11",
   "description": "A whatsapp chat floating button",
+  "readme": "README.md",
   "main": "./src/WhatsappFAB.js",
+  "module": "./src/WhatsappFAB.js",
+  "browser": "./src/WhatsappFAB.js",
   "types": "types/index.d.ts",
+  "sideEffects": [
+    "*.css"
+  ],
+  "exports": {
+    ".": {
+      "import": "./src/WhatsappFAB.js",
+      "require": "./src/WhatsappFAB.js",
+      "types": "./types/index.d.ts",
+      "default": "./src/WhatsappFAB.js"
+    },
+    "./web": {
+      "import": "./src/WhatsappFAB.web.js",
+      "require": "./src/WhatsappFAB.web.js",
+      "default": "./src/WhatsappFAB.web.js"
+    },
+    "./react": {
+      "import": "./src/WhatsappFAB.js",
+      "require": "./src/WhatsappFAB.js",
+      "types": "./types/index.d.ts",
+      "default": "./src/WhatsappFAB.js"
+    },
+    "./styles": "./src/WhatsappFAB.module.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "types",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "babel src -d dist",
-    "test": "jest"
+    "test": "jest",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "whatsapp",
     "fab",
     "button",
-    "chat"
+    "chat",
+    "react",
+    "angular",
+    "vue",
+    "web-component",
+    "floating-action-button",
+    "framework-agnostic"
   ],
   "author": "Lovenish Goyal",
   "license": "MIT",
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.23.7",
     "@babel/plugin-transform-runtime": "^7.23.7",

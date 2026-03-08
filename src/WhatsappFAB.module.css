@@ -1,27 +1,94 @@
-/* CSS Switch */
+/* CSS Variables */
 :root {
-  --fab-background: #009900;
-  --fab-background-hover: #009ae1;
+  --fab-background: #25d366;
+  --fab-background-hover: #20ba5a;
+  --fab-size: 64px;
+  --fab-position-bottom: 20px;
+  --fab-position-right: 20px;
 }
 
 /* WhatsAppButton.css */
 .btnWhatsapp {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
+  bottom: var(--fab-position-bottom);
+  right: var(--fab-position-right);
+  z-index: 9999;
+  box-sizing: border-box;
+}
+
+.btnWhatsapp.relative {
+  position: relative;
+  bottom: auto;
+  right: auto;
+  top: auto;
+  left: auto;
+  z-index: auto;
+}
+
+.btnWhatsapp.absolute {
+  position: absolute;
+  z-index: 9999;
 }
 
 .btnWhatsapp button {
   background: var(--fab-background);
+  border: none;
   border-radius: 50%;
-  width: 64px;
-  height: 64px;
+  width: var(--fab-size);
+  height: var(--fab-size);
   padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  outline: none;
+  box-sizing: border-box;
 }
 
 .btnWhatsapp button:hover {
-  background: var(--fab-background1);
+  background: var(--fab-background-hover);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Additional styling as needed */
+.btnWhatsapp button:active {
+  transform: scale(0.95);
+}
+
+.btnWhatsapp button:focus {
+  outline: 2px solid rgba(37, 211, 102, 0.5);
+  outline-offset: 2px;
+}
+
+.btnWhatsapp button img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Only apply white filter to default WhatsApp icon, not custom icons */
+.defaultIcon {
+  filter: brightness(0) invert(1); /* Makes default icon white for better visibility on green background */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .btnWhatsapp {
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .btnWhatsapp button {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .btnWhatsapp button img {
+    width: 22px;
+    height: 22px;
+  }
+}
